@@ -13,10 +13,7 @@ public class Presentation2 {
         Scanner scanner=new Scanner(new File("config.txt"));
         String daoClassName=scanner.nextLine();
         Class cdao=Class.forName(daoClassName);
-        /*
-        /fait l'appelle de la constrecteur sans parametre
-          : constrecteur par defaut
-         */
+
         IDao dao= (IDao) cdao.newInstance();
         System.out.println(dao.getData());
 
