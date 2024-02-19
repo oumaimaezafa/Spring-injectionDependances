@@ -9,7 +9,7 @@ public class presentSpringXML {
         ApplicationContext context=
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         IMetier metier= (IMetier) context.getBean("metier");
-        System.out.println("Resultat :"+metier.calcul());
+        System.out.println("Résultat :"+metier.calcul());
 
 
 
