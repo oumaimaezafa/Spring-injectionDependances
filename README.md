@@ -8,7 +8,17 @@ Une activité pratique  sur  Inversion de contrôle et Injection des dépendance
 <p> On a traité  aussi le principe de l'injection des dépendances  a travers :  </p>
 
 <ul>
-<li>instanciation  statique: Cela consiste à créer les instances des dépendances directement dans le code. Cependant, cette approche peut rendre l'application difficile à maintenir, car tout changement dans les dépendances nécessite une modification du code source. comme j'ai montré dans la classe presantation  </li>
+<li>instanciation  statique: Cela consiste à créer les instances des dépendances directement dans le code. Cependant, cette approche peut rendre l'application difficile à maintenir, car tout changement dans les dépendances nécessite une modification du code source. comme j'ai montré dans la classe presantation 
+'''
+java
+  IDao idao=new DaoImpl();
+        IMetierImpl metier=new IMetierImpl(idao);
+        //injection des dependances avec les setters
+        metier.setiDao(idao);
+        System.out.println("res: "+metier.calcul());
+'''
+
+</li>
 <li>instanciation dynamique : Cela ce fait on utilisant un fichier de configuration externe config.txt  qui permet de specifier les noms de versions a utiliser pendant la compilation , puis on utilise la classe "Classe " de java  pour que le programme charge cette derniere ensuite  crée des instances en utilisant la méthode newInstance()   </li>
 
 <p>ou bien en utilisant le framwork  Spring  avec les version suivantes:</p>
