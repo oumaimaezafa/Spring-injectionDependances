@@ -3,13 +3,12 @@ package Presentation;
 import DAO.DaoImpl;
 import DAO.IDao;
 import metier.IMetierImpl;
-//FABRIQUE OU UNE FACTORY
+// Cette classe represnete dans l'instanciation statique une FABRIQUE OU UNE FACTORY
 public class Presentation {
     /*
     INJECTION DES DEPENDANCES AVEC INJECTION STATIQUE
-     =>  AVEC NEW alors c'est un couplage forte
+     =>  avec new  donc  c'est un couplage forte
      */
-
     public static void main(String[] args) {
         IDao idao=new DaoImpl();
         IMetierImpl metier=new IMetierImpl(idao);

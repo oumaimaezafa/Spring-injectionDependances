@@ -13,7 +13,6 @@ public class Presentation2 {
         Scanner scanner=new Scanner(new File("config.txt"));
         String daoClassName=scanner.nextLine();
         Class cdao=Class.forName(daoClassName);
-
         IDao dao= (IDao) cdao.newInstance();
         System.out.println(dao.getData());
 

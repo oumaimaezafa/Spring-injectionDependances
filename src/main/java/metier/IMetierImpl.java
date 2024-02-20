@@ -6,21 +6,16 @@ import org.springframework.stereotype.Component;
 
 @Component("metier")
 public class IMetierImpl implements IMetier {
-
+    //@Autowired
     private IDao iDao;
     /*
      couplage faible : cad prete fonctionner a n'importe quelle classe qui implemente cette interface
      eviter d'utiliser new pour ne tombe pas  au couplage forte
      apres on peut affecter soit la version 1 ou bien 2
      */
-
-
     public IMetierImpl(IDao iDao) {
         this.iDao = iDao;
     }
-
-
-
     @Override
     public double calcul() {
         double data= iDao.getData();
